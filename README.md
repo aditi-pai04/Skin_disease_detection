@@ -15,3 +15,22 @@ This project aims to develop a machine learning-based diagnostic system for skin
 - Virtualenv (recommended)
 
 ## Installation
+1.Clone the Repository <br /> git clone **https://github.com/dnavya09/skin_disease.git**
+ <br /><br />
+2.Navigate into the cloned directory<br />
+```cd skin_disease```
+<br /><br />
+3.Create a virtual environment<br />
+```python -m venv venv```
+<br /><br />
+4.Activate the virtual environment<br />
+```venv\Scripts\activate```
+<br /><br />
+On macOS/Linux<br />
+```source venv/bin/activate```
+<br /><br />
+5.Install the required dependencies<br />
+```pip install -r requirements.txt```
+<br /><br />
+6.Run <br />
+```python app.py```
