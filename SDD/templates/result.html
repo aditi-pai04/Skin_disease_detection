@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result-info {
+            max-width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>The predicted disease is: <strong>{{ predicted_class }}</strong></p>
+        <p>Confidence: <strong>{{ confidence }}%</strong></p>
+    </div>
+    <div class="result-info">
+        <h2>Enter Symptoms</h2>
+        <form action="/process_symptoms" method="post">
+            <div class="form-group">
+                <label for="Redness">Redness:</label>
+                <select name="redness" id="redness">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="itching">Itching:</label>
+                <select name="itching" id="itching">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="blisters">Blisters:</label>
+                <select name="blisters" id="blisters">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div><div class="form-group">
+                <label for="pus_soars">Pus-filled sores:</label>
+                <select name="pus_soars" id="pus_soars">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fever">Fever:</label>
+                <select name="fever" id="fever">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="swollen_lymph_nodes">Swollen lymph nodes:</label>
+                <select name="swollen_lymph_nodes" id="swollen_lymph_nodes">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="thickened_nails">Thickened, discolored nails:</label>
+                <select name="thickened_nails" id="thickened_nails">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="scaly_itchy_patches">Scaly, itchy patches:</label>
+                <select name="scaly_itchy_patches" id="scaly_itchy_patches">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="burning_sensation">Burning sensation:</label>
+                <select name="burning_sensation" id="burning_sensation">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fluid_filled_bumps">Fluid-filled bumps:</label>
+                <select name="fluid_filled_bumps" id="fluid_filled_bumps">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <!-- Add other symptom fields here -->
+            <button type="submit">Submit Symptoms</button>
+        </form>
+    </div>
+</body>
+</html>
